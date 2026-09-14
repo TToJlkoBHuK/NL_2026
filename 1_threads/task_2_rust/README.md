@@ -15,6 +15,6 @@
 ## Запуск программы
 
 ```
-rustc -O main.rs
-./main 10000000 4
+rustc -O main.rs -o sieve
+./sieve 10000000 4
 ```

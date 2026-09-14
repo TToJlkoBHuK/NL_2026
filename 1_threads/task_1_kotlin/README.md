@@ -15,6 +15,7 @@
 ## Запуск программы
 
 ```
+bash make_data.sh files 6 40000
 kotlinc Main.kt -include-runtime -d app.jar
-java -jar app.jar files/ 4
+java -jar app.jar files 4
 ```

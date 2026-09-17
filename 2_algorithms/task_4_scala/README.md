@@ -15,6 +15,5 @@
 ## Запуск программы
 
 ```
-scalac Dijkstra.scala
-scala Dijkstra graph.txt A F
+scala Dijkstra.scala -- graph.txt A F
 ```

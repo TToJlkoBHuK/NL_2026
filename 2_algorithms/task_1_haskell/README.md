@@ -15,6 +15,6 @@
 ## Запуск программы
 
 ```
-ghc -O2 Sudoku.hs
-./Sudoku puzzle.txt
+ghc -O2 -o sudoku Sudoku.hs
+./sudoku puzzle.txt
 ```

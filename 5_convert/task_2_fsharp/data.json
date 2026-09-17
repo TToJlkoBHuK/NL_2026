@@ -1,0 +1,11 @@
+{
+  "company": "ООО \"Ромашка\"",
+  "founded": 2014,
+  "active": true,
+  "parent": null,
+  "employees": [
+    { "name": "Иванов И.И.", "age": 34, "skills": ["Kotlin", "Rust"] },
+    { "name": "Петров П.П.", "age": 28, "skills": ["Elixir"] }
+  ],
+  "address": { "city": "Москва", "zip": "101000" }
+}

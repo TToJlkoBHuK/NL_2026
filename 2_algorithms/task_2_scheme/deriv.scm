@@ -1,0 +1,106 @@
+(define (op? expr symbol)
+  (and (pair? expr) (eq? (car expr) symbol)))
+
+(define (arg1 expr) (cadr expr))
+(define (arg2 expr) (caddr expr))
+
+(define (deriv expr var)
+  (cond
+    ((number? expr) 0)
+    ((symbol? expr) (if (eq? expr var) 1 0))
+    ((op? expr '+) (list '+ (deriv (arg1 expr) var) (deriv (arg2 expr) var)))
+    ((op? expr '-) (list '- (deriv (arg1 expr) var) (deriv (arg2 expr) var)))
+    ((op? expr '*)
+     (list '+
+           (list '* (deriv (arg1 expr) var) (arg2 expr))
+           (list '* (arg1 expr) (deriv (arg2 expr) var))))
+    ((op? expr '/)
+     (list '/
+           (list '-
+                 (list '* (deriv (arg1 expr) var) (arg2 expr))
+                 (list '* (arg1 expr) (deriv (arg2 expr) var)))
+           (list '^ (arg2 expr) 2)))
+    ((op? expr '^)
+     (let ((base (arg1 expr)) (power (arg2 expr)))
+       (list '*
+             (list '* power (list '^ base (- power 1)))
+             (deriv base var))))
+    (else (error "неизвестное выражение:" expr))))
+
+(define (make-sum a b)
+  (cond ((and (number? a) (number? b)) (+ a b))
+        ((eqv? a 0) b)
+        ((eqv? b 0) a)
+        (else (list '+ a b))))
+
+(define (make-diff a b)
+  (cond ((and (number? a) (number? b)) (- a b))
+        ((eqv? b 0) a)
+        (else (list '- a b))))
+
+(define (make-product a b)
+  (cond ((and (number? a) (number? b)) (* a b))
+        ((or (eqv? a 0) (eqv? b 0)) 0)
+        ((eqv? a 1) b)
+        ((eqv? b 1) a)
+        (else (list '* a b))))
+
+(define (make-quotient a b)
+  (cond ((eqv? a 0) 0)
+        ((eqv? b 1) a)
+        (else (list '/ a b))))
+
+(define (make-power base power)
+  (cond ((eqv? power 0) 1)
+        ((eqv? power 1) base)
+        ((number? base) (expt base power))
+        (else (list '^ base power))))
+
+(define (simplify expr)
+  (if (not (pair? expr))
+      expr
+      (let ((a (simplify (arg1 expr)))
+            (b (simplify (arg2 expr))))
+        (case (car expr)
+          ((+) (make-sum a b))
+          ((-) (make-diff a b))
+          ((*) (make-product a b))
+          ((/) (make-quotient a b))
+          ((^) (make-power a b))
+          (else expr)))))
+
+(define (evaluate expr var value)
+  (cond
+    ((number? expr) expr)
+    ((symbol? expr) (if (eq? expr var) value (error "свободная переменная:" expr)))
+    (else
+     (let ((a (evaluate (arg1 expr) var value))
+           (b (evaluate (arg2 expr) var value)))
+       (case (car expr)
+         ((+) (+ a b))
+         ((-) (- a b))
+         ((*) (* a b))
+         ((/) (/ a b))
+         ((^) (expt a b))
+         (else (error "неизвестная операция:" (car expr))))))))
+
+(define (read-expression path)
+  (call-with-input-file path read))
+
+(define (main args)
+  (let* ((path (if (> (length args) 1) (cadr args) "expr.txt"))
+         (expr (read-expression path))
+         (raw (deriv expr 'x))
+         (short (simplify raw)))
+    (display "Выражение:   ") (write expr) (newline)
+    (display "Производная: ") (write raw) (newline)
+    (display "Упрощённая:  ") (write short) (newline)
+    (if (> (length args) 2)
+        (let ((point (string->number (caddr args))))
+          (display "Значение в точке x = ")
+          (display point)
+          (display ": ")
+          (display (evaluate short 'x point))
+          (newline)))))
+
+(main (command-line))

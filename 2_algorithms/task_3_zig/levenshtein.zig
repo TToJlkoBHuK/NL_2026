@@ -14,19 +14,22 @@ fn min3(a: usize, b: usize, c: usize) usize {
     return m;
 }
 
-pub fn main() !void {
-    const alloc = std.heap.page_allocator;
+pub fn main(init: std.process.Init) !void {
+    const alloc = init.gpa;
 
-    const args = try std.process.argsAlloc(alloc);
-    defer std.process.argsFree(alloc, args);
+    var args = init.minimal.args.iterate();
+    defer args.deinit();
+    _ = args.skip();
 
-    if (args.len < 3) {
+    const a = args.next() orelse {
         std.debug.print("Использование: levenshtein <строка1> <строка2>\n", .{});
         return;
-    }
+    };
+    const b = args.next() orelse {
+        std.debug.print("Использование: levenshtein <строка1> <строка2>\n", .{});
+        return;
+    };
 
-    const a = args[1];
-    const b = args[2];
     const n = a.len;
     const m = b.len;
     const width = m + 1;

@@ -19,3 +19,6 @@ bash make_data.sh files 6 40000
 kotlinc Main.kt -include-runtime -d app.jar
 java -jar app.jar files 4
 ```
+
+## Запуск программы
+https://disk.yandex.ru/i/jW5dT5LVAsDajA

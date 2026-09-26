@@ -17,3 +17,6 @@
 ```
 zig run levenshtein.zig -- kitten sitting
 ```
+
+## Видео
+https://disk.yandex.ru/i/hbaAoZi8u9J70w

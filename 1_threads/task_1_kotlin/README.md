@@ -20,5 +20,5 @@ kotlinc Main.kt -include-runtime -d app.jar
 java -jar app.jar files 4
 ```
 
-## Запуск программы
+## Видео
 https://disk.yandex.ru/i/jW5dT5LVAsDajA

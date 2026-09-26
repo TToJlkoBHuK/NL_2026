@@ -15,5 +15,9 @@
 ## Запуск программы
 
 ```
-ruby pipeline.rb logs/ 2 4
+ruby make_logs.rb logs 4 15000
+ruby pipeline.rb logs 2 4
 ```
+
+## Видео
+https://disk.yandex.ru/i/daXbA5FnFhZKag

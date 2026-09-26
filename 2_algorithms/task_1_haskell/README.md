@@ -18,3 +18,6 @@
 ghc -O2 -o sudoku Sudoku.hs
 ./sudoku puzzle.txt
 ```
+
+## Видео
+https://disk.yandex.ru/i/UFLWMcXh9hqX8Q

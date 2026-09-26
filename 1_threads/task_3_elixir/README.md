@@ -17,3 +17,6 @@
 ```
 elixir philosophers.exs 5 10
 ```
+
+## Видео
+https://disk.yandex.ru/i/_jSKm8npgwm1Bg

@@ -17,3 +17,6 @@
 ```
 guile deriv.scm expr.txt 2
 ```
+
+## Видео
+https://disk.yandex.ru/i/eqIUa6dmEvZamA

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- каталог книг -->
+<catalog>
+  <book id="b1" section="программирование">
+    <title>Структура и интерпретация компьютерных программ</title>
+    <author>Абельсон, Сассман</author>
+    <year>1985</year>
+    <price>2400</price>
+  </book>
+  <book id="b2" section="программирование">
+    <title>Язык программирования C</title>
+    <author>Керниган, Ритчи</author>
+    <year>1978</year>
+    <pages>288</pages>
+  </book>
+  <book id="b3">
+    <title>Алгоритмы: построение и анализ</title>
+    <author>Кормен и др.</author>
+    <year>1990</year>
+    <price>3900</price>
+    <note>в наличии, "последний экземпляр"</note>
+  </book>
+</catalog>

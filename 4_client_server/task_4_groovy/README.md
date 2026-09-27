@@ -22,3 +22,6 @@ groovy HttpServer.groovy 8080 www
 groovy HttpClient.groovy 127.0.0.1 8080 /
 groovy HttpClient.groovy 127.0.0.1 8080 /stats
 ```
+
+## Видео
+https://drive.google.com/file/d/1LB492uT0OVlvfCbrUI916TpkQ9Ceucta/view?usp=sharing

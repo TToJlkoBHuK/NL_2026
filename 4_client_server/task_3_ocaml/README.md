@@ -24,3 +24,6 @@ ocamlfind ocamlopt -package unix -linkpkg client.ml -o client
 # второй терминал
 ./client 127.0.0.1 9000
 ```
+
+## Видео
+https://drive.google.com/file/d/13hjKJEEZzT5JPj4E2h5kMwn1JkZD1hZm/view?usp=sharing

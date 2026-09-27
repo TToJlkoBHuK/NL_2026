@@ -18,3 +18,6 @@
 perl make_log.pl access.log 20000
 perl loganalyzer.pl access.log report.txt
 ```
+
+## Видео
+https://disk.yandex.ru/i/2KpLtejarfwl4A

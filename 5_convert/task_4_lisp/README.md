@@ -17,3 +17,6 @@
 ```
 sbcl --script xml2csv.lisp books.xml books.csv book
 ```
+
+## Видео
+https://drive.google.com/file/d/1e0G6Ekqgt1pSSeLAfeXuXyinWnon-OYv/view?usp=sharing

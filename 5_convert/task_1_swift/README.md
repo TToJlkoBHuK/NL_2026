@@ -18,3 +18,5 @@
 swiftc -O csv2json.swift -o csv2json
 ./csv2json data.csv out.json
 ```
+## Видео
+https://drive.google.com/file/d/1IdsA_PtEbzRxZj14vA_BUYEJztZqs0Sa/view?usp=sharing

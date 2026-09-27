@@ -17,3 +17,6 @@
 ```
 scala Dijkstra.scala -- graph.txt A F
 ```
+
+## Видео
+https://disk.yandex.ru/i/pYWJF141JNZfpg

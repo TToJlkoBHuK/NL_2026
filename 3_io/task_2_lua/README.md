@@ -17,3 +17,6 @@
 ```
 lua5.4 todo.lua tasks.txt
 ```
+
+## Видео
+https://disk.yandex.ru/i/ejRSStAaKCvwKw

@@ -19,3 +19,6 @@ nim c -d:release hexdump.nim
 ./hexdump dump sample.bin sample.hex
 ./hexdump restore sample.hex restored.bin sample.bin
 ```
+
+## Видео
+https://disk.yandex.ru/i/_vKAnkkOSGiPEQ

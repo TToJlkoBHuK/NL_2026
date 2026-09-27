@@ -21,3 +21,6 @@ julia kv_server.jl 9000
 # второй терминал
 julia kv_client.jl 127.0.0.1 9000
 ```
+
+## Видео
+https://drive.google.com/file/d/1H5QPu1zBJTVGMrDR5Dw8ysBIrgN30Vfw/view?usp=sharing

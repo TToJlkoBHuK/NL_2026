@@ -23,3 +23,6 @@ erl -noshell -pa . -eval 'chat_server:start(9000)'
 # второй и третий терминалы
 erl -noshell -pa . -eval 'chat_client:start("127.0.0.1", 9000)'
 ```
+
+## Видео
+https://drive.google.com/file/d/1qX7prVOPOOg4F-3XPex_V6ZkUT1rtTVH/view?usp=sharing

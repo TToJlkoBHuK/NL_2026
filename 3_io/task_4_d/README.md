@@ -20,3 +20,6 @@ head -c 300000 /dev/urandom > big.bin
 ./split split big.bin 100000
 ./split join big.bin.parts restored.bin
 ```
+
+## Видео
+https://drive.google.com/file/d/19zWIB6KJTiJln_-pV1TPQsYA_4AO6Z3z/view?usp=sharing

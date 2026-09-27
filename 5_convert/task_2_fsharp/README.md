@@ -17,3 +17,6 @@
 ```
 dotnet fsi json2xml.fsx data.json out.xml
 ```
+
+## Видео
+https://drive.google.com/file/d/1N7Sfsv5oDhLpBHuKVIvkh1D_sVTq9qDw/view?usp=sharing

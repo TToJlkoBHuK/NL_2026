@@ -17,3 +17,6 @@
 ```
 clojure -M md2html.clj doc.md doc.html
 ```
+
+## Видео
+https://drive.google.com/file/d/1m068HW07i0nxsJkMumYXTgwab7zbbvhZ/view?usp=sharing
